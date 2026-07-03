@@ -138,20 +138,9 @@ async function classifyLogs(req, res) {
           },
           startTime
         );
-      } catch (aiError) {
-        console.warn("Ollama failed:", aiError.message);
-
-        return sendResponse(
-          res,
-          false,
-          "Ollama AI failed. Turn off AI mode to run the local engine.",
-          {
-            aiMode: "Ollama AI Failed",
-            error: aiError.message
-          },
-          startTime
-        );
-      }
+      }catch (aiError) {
+  console.warn("Ollama failed. Falling back to local engine:", aiError.message);
+}
     }
 
     // -----------------------------
