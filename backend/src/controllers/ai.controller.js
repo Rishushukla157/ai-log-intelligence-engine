@@ -252,19 +252,11 @@ return sendResponse(
           startTime
         );
       } catch (aiError) {
-        console.warn("Ollama timeline failed:", aiError.message);
-
-        return sendResponse(
-          res,
-          false,
-          "Ollama AI failed. Turn off AI mode to run the local timeline engine.",
-          {
-            aiMode: "Ollama AI Failed",
-            error: aiError.message
-          },
-          startTime
-        );
-      }
+  console.warn(
+    "Ollama timeline failed. Falling back to local engine:",
+    aiError.message
+  );
+}
     }
 
     // -----------------------------
@@ -299,12 +291,12 @@ return sendResponse(
       true,
       "Incident timeline generated successfully using local engine",
       {
-        dataSource,
         engineInfo: {
-    mode: "Local Rule Engine",
-    aiEnabled: false,
-    llmUsed: false
-},
+          mode: useAI ? "Local Engine Fallback" : "Local Rule Engine",
+          aiEnabled: useAI,
+          llmUsed: false,
+          fallbackUsed: useAI
+        },
         architecture:
           "Pattern Detection → Incident Correlation → Timeline Reconstruction",
         timelineMeta: timelinePipeline.timelineMeta,
@@ -383,19 +375,11 @@ async function rootCauseAnalysis(req, res) {
           startTime
         );
       } catch (aiError) {
-        console.warn("Ollama RCA failed:", aiError.message);
-
-        return sendResponse(
-          res,
-          false,
-          "Ollama AI failed. Turn off AI mode to run the local RCA engine.",
-          {
-            aiMode: "Ollama AI Failed",
-            error: aiError.message
-          },
-          startTime
-        );
-      }
+  console.warn(
+    "Ollama RCA failed. Falling back to local engine:",
+    aiError.message
+  );
+}
     }
 
     // -----------------------------
@@ -408,9 +392,10 @@ async function rootCauseAnalysis(req, res) {
       {
         dataSource,
         engineInfo: {
-    mode: "Local Rule Engine",
-    aiEnabled: false,
-    llmUsed: false
+  mode: useAI ? "Local Engine Fallback" : "Local Rule Engine",
+  aiEnabled: useAI,
+  llmUsed: false,
+  fallbackUsed: useAI
 },
         architecture:
           "Pattern Detection → Incident Correlation → Root Cause Inference",
