@@ -2,7 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_BASE_URL = "http://localhost:5000/api/ai";
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api/ai";
+console.log("API URL:", API_BASE_URL);
 
 function App() {
   const [logs, setLogs] = useState("");
