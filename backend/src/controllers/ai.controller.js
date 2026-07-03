@@ -88,6 +88,13 @@ async function uploadDataset(req, res) {
 async function classifyLogs(req, res) {
   const startTime = Date.now();
 
+  console.log("====================================");
+  console.log("Classification API Triggered");
+  console.log("Method:", req.method);
+  console.log("URL:", req.originalUrl);
+  console.log("Body:", req.body);
+  console.log("====================================");
+
   try {
     const useAI = req.body.useAI === true;
 
@@ -193,6 +200,13 @@ async function classifyLogs(req, res) {
 
 async function generateTimeline(req, res) {
   const startTime = Date.now();
+
+  console.log("====================================");
+  console.log("Timeline API Triggered");
+  console.log("Method:", req.method);
+  console.log("URL:", req.originalUrl);
+  console.log("Body:", req.body);
+  console.log("====================================");
 
   try {
     const useAI = req.body.useAI === true;
@@ -320,6 +334,13 @@ return sendResponse(
 
 async function rootCauseAnalysis(req, res) {
   const startTime = Date.now();
+
+  console.log("====================================");
+  console.log("Root Cause Analysis API Triggered");
+  console.log("Method:", req.method);
+  console.log("URL:", req.originalUrl);
+  console.log("Body:", req.body);
+  console.log("====================================");
 
   try {
     const useAI = req.body.useAI === true;
