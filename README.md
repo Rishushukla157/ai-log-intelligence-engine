@@ -1011,35 +1011,6 @@ Characteristics
 
 ---
 
-# Screenshots
-
-## Dashboard
-
-*(Add dashboard screenshot here)*
-
----
-
-## AI Classification
-
-*(Add screenshot here)*
-
----
-
-## Incident Timeline
-
-*(Add screenshot here)*
-
----
-
-## Root Cause Analysis
-
-*(Add screenshot here)*
-
----
-
-## Hybrid Workflow
-
-*(Add architecture screenshot here)*
 
 # Design Decisions
 
@@ -1264,58 +1235,23 @@ AI-Log-Intelligence
 └── .env.example
 ```
 
----
 
-# References
 
-- Apache HTTP Server Documentation
-- Apache Log Format Documentation
-- Ollama Documentation
-- Llama 3.2
-- Node.js
-- Express.js
-- React.js
-- Mermaid.js
-
----
-
-# Author
-
-## Rishu Shukla
-
-Computer Engineering Graduate
-
-AI • Machine Learning • Backend Development • Generative AI
-
----
-
-# Connect
-
-GitHub:
-```
-https://github.com/<your-username>
-```
-
-LinkedIn:
-```
-https://linkedin.com/in/<your-profile>
-```
-
-Email:
-```
-rishushukla157@gmail.com
-```
-
----
-
-# License
-
-This project is licensed under the MIT License.
-
----
 
 # Final Notes
 
 This project demonstrates a production-inspired hybrid AI architecture for infrastructure log intelligence. Instead of treating the Large Language Model as the primary processing engine, deterministic algorithms perform parsing, enrichment, deduplication, pattern detection, incident correlation, and context selection before AI reasoning.
 
 This design aligns with modern AI engineering practices by reducing unnecessary LLM computation while improving explainability, scalability, and operational reliability. The result is an intelligent log analysis platform capable of classifying infrastructure events, reconstructing incident timelines, and performing root cause analysis using both deterministic logic and semantic AI reasoning.
+
+---
+
+---
+
+<p align="center">
+<i>Built and maintained by Rishu Shukla</i>
+</p>
+
+---
+
+---
